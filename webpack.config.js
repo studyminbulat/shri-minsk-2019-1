@@ -3,6 +3,19 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs')
 
+// function generateHtmlPlugins(templateDir) {
+//     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+//     return templateFiles.map(item => {
+//         const parts = item.split('.');
+//         const name = parts[0];
+//         const extension = parts[1];
+//         return new HtmlWebpackPlugin({
+//             filename: `${name}.html`,
+//             template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+//             // inject: false,
+//         })
+//     })
+// }
 function generateHtmlPlugins(templateDir) {
     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
     return templateFiles.map(item => {
@@ -10,7 +23,7 @@ function generateHtmlPlugins(templateDir) {
         const name = parts[0];
         const extension = parts[1];
         return new HtmlWebpackPlugin({
-            filename: `${name}.html`,
+            filename: `${name}.pug`,
             template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
             // inject: false,
         })
@@ -22,7 +35,8 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views')
 module.exports = {
     entry: [
         './src/js/index.js',
-        './src/scss/style.scss',
+        './src/styl/style.styl',
+        // './src/pug/index.pug',
     ],
     output: {
         filename: './js/bundle.js'
@@ -30,42 +44,50 @@ module.exports = {
     devtool: "source-map",
     module: {
         rules: [
+            // {
+            //     test: /\.(pug|jade)$/,
+            //     // include: path.resolve(__dirname, 'src/html/includes'),
+            //     use: ['raw-loader']
+            // },
             {
-                test: /\.html$/,
-                include: path.resolve(__dirname, 'src/html/includes'),
-                use: ['raw-loader']
-            },
-            {
-            test: /\.js$/,
-            include: path.resolve(__dirname, 'src/js'),
-            use: {
-                loader: 'babel-loader',
+                test: /\.(pug|jade)$/,
+                loader: 'pug-loader',
                 options: {
-                    presets: ['env']
-                }
-            }
-        },
-            {
-                test: /\.(sass|scss)$/,
-                include: path.resolve(__dirname, 'src/scss'),
-                use: ExtractTextPlugin.extract({
-                    use: [{
-                        loader: "css-loader",
-                        options: {
-                            sourceMap: true,
-                            // minimize: true,
-                            url: false
-                        }
-                    },
-                        {
-                            loader: "sass-loader",
-                            options: {
-                                sourceMap: true
-                            }
-                        }
-                    ]
-                })
+                    pretty: true,
+                },
             },
+            {
+                test: /\.js$/,
+                include: path.resolve(__dirname, 'src/js'),
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
+            },
+            // {
+            //     test: /\.styl$/,
+            //     include: path.resolve(__dirname, 'src/styl'),
+            //     use: ExtractTextPlugin.extract({
+            //         use: [{
+            //             loader: "css-loader",
+            //             options: {
+            //                 sourceMap: true,
+            //                 // minimize: true,
+            //                 url: false
+            //             }
+            //         },
+            //             {
+            //                 loader: "style-loader",
+            //                 options: {
+            //                     sourceMap: true
+            //                 }
+            //             }
+            //         ]
+            //     })
+            // },
+            {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'}
         ]
     },
     plugins: [
@@ -73,5 +95,9 @@ module.exports = {
             filename: './css/style.bundle.css',
             allChunks: true,
         }),
-    ].concat(htmlPlugins)
+        new HtmlWebpackPlugin({
+            template: './src/pug/index.pug',
+        })
+    ]
+    // .concat(htmlPlugins)
 };
