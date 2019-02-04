@@ -67,6 +67,19 @@ module.exports = {
                 }
             },
             // {
+            //     test: /\.(png|jpg|gif)$/,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {},
+            //         },
+            //     ],
+            // },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader'
+            },
+            // {
             //     test: /\.styl$/,
             //     include: path.resolve(__dirname, 'src/styl'),
             //     use: ExtractTextPlugin.extract({
