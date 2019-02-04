@@ -1,10 +1,10 @@
 @import "variables.styl"
 @import "accordion.styl"
-
-@font-face
-  font-family: 'Roboto'
-  font-style: normal
-  font-weight: 400
+//
+//@font-face
+//  font-family: 'Roboto'
+//  font-style: normal
+//  font-weight: 400
 
 
 html, body, div
@@ -12,19 +12,76 @@ html, body, div
   padding 0
 
 body
-  body { background: url('../images/photo.png'); }
+
+  //background url('https://github.com/studyminbulat/shri-minsk-2019-1/blob/master/src/images/page-1-desktop.png?raw=true') no-repeat;
+  //background url('../images/page-1-desktop.png') no-repeat;
+  background-position: center top;
+  background-size 1000px;
+
+  //opacity 0.5
 
   h2.center
     text-align: center
 
-.wrapper
-  max-width 700px
+
+
+.button:hover
+  background-color $color-black
+
+.button:active
+  background-color $color-main
+  opacity 0.7
+
+.header, .expectations, .projects, .contacts
+  display flex
+  justify-content  center
+
 
 .header
   background-color: $color-gray-light
+  min-height 100vh
+
+  .wrapper
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    padding-top 124px
+    padding-bottom 125px
+
+  .photo
+    img
+      width 205px
+      height 205px
+      background url('../images/photo.png');
+      background-size 205px;
+      border-radius 50%
+
+      @media screen and (min-width: 600px)
+        width 250px
+        height 250px
+        background-size 250px;
+
+      @media screen and (min-width: 1000px)
+        width 340px
+        height 340px
+        background-size 340px;
+
+  .name
+    margin-bottom 10px
+  //.about
+    //margin 0
+
+  .connect
+    margin-top 22px
+
 
 .expectations
   background-color: $color-white
+  height 523px
+  .wrapper
+    padding-top 80px
+
 
 
 .projects
