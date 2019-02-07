@@ -1,5 +1,6 @@
 @import "variables.styl"
 @import "accordion.styl"
+@import "slider.styl"
 //
 //@font-face
 //  font-family: 'Roboto'
@@ -49,11 +50,20 @@ body
     padding-top 124px
     padding-bottom 125px
 
+
+    max-width 280px
+
+    @media screen and (min-width: 600px)
+      max-width 280px
+
+    @media screen and (min-width: 1000px)
+      max-width 700px
+
   .photo
     img
       width 205px
       height 205px
-      background url('../images/photo.png');
+      //background url('../images/photo.png');
       background-size 205px;
       border-radius 50%
 
@@ -67,10 +77,12 @@ body
         height 340px
         background-size 340px;
 
+
   .name
     margin-bottom 10px
-  //.about
-    //margin 0
+
+  .about
+    text-align center
 
   .connect
     margin-top 22px
@@ -78,14 +90,110 @@ body
 
 .expectations
   background-color: $color-white
-  height 523px
+  padding-bottom 15px
+  //height 523px
   .wrapper
-    padding-top 80px
+    //padding 100px 0 115px 0
+
+    p.text1
+      max-width 520px
 
 
 
 .projects
   background-color: $color-gray-dark
+  .wrapper
+
+    h2
+      color $color-white
+      text-align center
+      margin 0
+
+    .text1
+      color $color-white
+      opacity 0.7
+      text-align center
+      margin 8px auto 0 auto
+      max-width 520px
 
 .contacts
   background-color: $color-gray-light
+
+  .wrapper
+    width calc(100% - 40px)
+  h2
+    margin 0
+
+  .text1
+    margin 40px 0
+    text-align center
+  .form
+    margin-top 20px
+    //width calc(100% - 40px)
+    display grid
+    grid-gap 20px
+    grid-template-areas "name " "mail" " message" " file" " enter"
+    grid-template-columns: 100%;
+    //grid-template-rows: auto;
+    @media screen and (min-width: 1000px)
+      grid-template-areas "name mail" "message message" "file file" "enter enter"
+      grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+
+    #name
+      grid-area name
+
+    #mail
+      grid-area mail
+    #message
+      grid-area message
+      //grid-column: 1 / span 2;
+    #file
+      grid-area file
+      //grid-column: 1 / span 2;
+    #enter
+      grid-area enter
+      //grid-column: 1 / span 2;
+
+    input, textarea
+      height calc(36px - 6px - 6px)
+      //padding 6px 72px 10px 12px
+      padding 6px 72px 6px 12px
+      background: #FFFFFF;
+      border: 1px solid rgba(31,64,111,0.20);
+      border-radius: 4px;
+
+      &::placeholder
+        opacity: 0.3
+        font-family 'PT Sans', sans-serif
+        font-size 16px
+        color #000000
+        line-height 20px
+
+    textarea
+      resize: none
+      height 136px
+      font-family 'PT Sans', sans-serif
+      font-size 16px
+
+    input[type=file]
+      background-color $color-gray-light
+      color $color-main
+
+    .button
+      background-color $color-main
+      color $color-white
+      width 100%
+      //height calc(52px - 2 * 14px)
+      height 52px
+      padding 14px
+
+  .socials
+    .vk
+      width 48px
+      height 48px
+      background-size  48px 48px
+      border-radius 50%
+      background-image url("../images/VK.com-logo.svg?fill=%23395A99")
+
+      &:hover
+        background-image url("../images/VK.com-logo.svg?fill=%23395A99")

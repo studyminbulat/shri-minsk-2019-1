@@ -75,10 +75,28 @@ module.exports = {
             //         },
             //     ],
             // },
+            // {
+            //     test: /\.(png|jpg)$/,
+            //     loader: 'url-loader'
+            // },
             {
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader'
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    }
+                ]
+            },{
+                test: /\.svg(\?.*)?$/, // match img.svg and img.svg?param=value
+                use: [
+                    'url-loader', // or file-loader or svg-url-loader
+                    'svg-transform-loader'
+                ]
             },
+            // {
+            //     test: /\.svg$/,
+            //     loader: 'svg-inline-loader'
+            // },
             // {
             //     test: /\.styl$/,
             //     include: path.resolve(__dirname, 'src/styl'),

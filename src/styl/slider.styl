@@ -1,0 +1,62 @@
+@import "variables.styl"
+
+.slider
+  position relative
+  width 100%
+  padding-top 370px
+  text-align center
+
+  //@media screen and (min-width: 600px)
+  //  max-width 280px
+  //
+  //@media screen and (min-width: 1000px)
+  //  max-width 700px
+
+.bullit
+  position absolute
+  clip rect(0 0 0 0)
+  overflow hidden
+
+  &:checked
+    & + .slide
+      &:after
+        background-color transparent
+        border: 1px solid #71ABFF;
+        width 6px
+        height 6px
+
+      & + .image
+        display block
+
+.image
+  position absolute
+  top 0
+  left 0
+  display none
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 7px 22px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  width 100%
+
+.slide
+  overflow hidden
+  display inline-block
+  width 16px
+  height 16px
+  //background-color white
+
+  &:after
+      content: ''
+      width 8px
+      height 8px
+      background-color $color-6
+      display block
+      margin 4px
+      border-radius 50%
+
+  &:hover
+    &:after
+      background-color $color-white
+//text-indent -9999px
+
+
+
