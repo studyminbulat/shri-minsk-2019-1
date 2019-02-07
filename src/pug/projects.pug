@@ -1,51 +1,107 @@
 .projects
     .wrapper
         h2 Мои работы
-        .text1 Собраны избранные реально работающие проекты
+        .text1 Собраны избранные проекты, разработанные во время обучения в магистратуре
+
+        article
+            h3 Passengers Transportation
+            p.link
+                a(href="https://transport.minbulat.ru/") transport.minbulat.ru
+
+            .slider
+                .bullits
+                    .slideo
+                        input#slide-1-1.bullit(type='radio', name='slider-1', checked='')
+                        label.slide(for='slide-1-1')
+                        //label.i(for='slide-1-1')
+                        img.image(src=require("../images/transport1.png"), alt='')
+                    .slideo
+                        input#slide-1-2.bullit(type='radio', name='slider-1')
+                        label.slide(for='slide-1-2')
+                        img.image(src=require("../images/transport2.png"), alt='')
+                    .slideo
+                        input#slide-1-3.bullit(type='radio', name='slider-1')
+                        label.slide(for='slide-1-3')
+                        img.image(src=require("../images/transport3.png"), alt='')
+                    .slideo
+                        input#slide-1-4.bullit(type='radio', name='slider-1')
+                        label.slide(for='slide-1-4')
+                        img.image(src=require("../images/transport4.png"), alt='')
+                p.description.text2 Веб-приложения для просмотра и изменения информации об автобусах, маршрутах и остановках. Создан на React и Redux в качестве практической работы в университете.
+
+
+        //article
+        //    h3 Генератор dockerfile
+        //    p.link
+        //        a(href="https://rest.minbulat.ru/") rest.minbulat.ru
+        //
+        //    .slider
+        //        .bullits
+        //            .slideo
+        //                input#slide-2-1.bullit(type='radio', name='slider-2', checked='')
+        //                label.slide(for='slide-2-1')
+        //                img.image(src=require("../images/rest1.png"), alt='')
+        //            .slideo
+        //                input#slide-2-2.bullit(type='radio', name='slider-2')
+        //                label.slide(for='slide-2-2')
+        //                img.image(src=require("../images/rest2.png"), alt='')
+        //            .slideo
+        //                input#slide-2-3.bullit(type='radio', name='slider-2')
+        //                label.slide(for='slide-2-3')
+        //                img.image(src=require("../images/rest3.png"), alt='')
+        //            .slideo
+        //                input#slide-2-4.bullit(type='radio', name='slider-2')
+        //                label.slide(for='slide-2-4')
+        //                img.image(src=require("../images/rest4.png"), alt='')
+        //        p.description.text2 Веб-приложение, реализующее REST API. Создан в рамках курса по серверной разработке в университете.
+
 
         article
             h3 Генератор dockerfile
-            a docker.minbulat.ru
+            p.link
+                a(href="https://docker.minbulat.ru/") docker.minbulat.ru
 
             .slider
+                .bullits
+                    .slideo
+                        input#slide-3-1.bullit(type='radio', name='slider-3', checked='')
+                        label.slide(for='slide-3-1')
+                        img.image(src=require("../images/docker1.png"), alt='')
+                    .slideo
+                        input#slide-3-2.bullit(type='radio', name='slider-3')
+                        label.slide(for='slide-3-2')
+                        img.image(src=require("../images/docker2.png"), alt='')
+                    .slideo
+                        input#slide-3-3.bullit(type='radio', name='slider-3')
+                        label.slide(for='slide-3-3')
+                        img.image(src=require("../images/docker3.png"), alt='')
+                    .slideo
+                        input#slide-3-4.bullit(type='radio', name='slider-3')
+                        label.slide(for='slide-3-4')
+                        img.image(src=require("../images/docker4.png"), alt='')
+                p.description.text2 Графический интерфейс для приложения генерации докер-файлов. Пользователь заполняет форму за несколько шагов и получает готовый докер-файл (пока не реализовано). Создан на Vue в качестве практической работы в университете.
 
+        article
+            h3 Дизайн образовательных приложений
+            p.link
+                a(href="https://design.minbulat.ru/") design.minbulat.ru
 
-
-
-
-                .slideo
-                    input#slide-1-1.bullit(type='radio', name='slider-1', checked='')
-                    label.slide(for='slide-1-1')
-                    //label.i(for='slide-1-1')
-                    img.image(src='http://habrastorage.org/files/3f2/628/bd5/3f2628bd58c8452db516195cb0c9bfc9.jpg', alt='')
-                .slideo
-                    input#slide-1-2.bullit(type='radio', name='slider-1')
-                    label.slide(for='slide-1-2')
-                    img.image(src='http://habrastorage.org/files/3e1/95d/c7f/3e195dc7f5a64469807f49a14f97ba0e.jpg', alt='')
-                .slideo
-                    input#slide-1-3.bullit(type='radio', name='slider-1')
-                    label.slide(for='slide-1-3')
-                    img.image(src='http://habrastorage.org/files/663/6b1/d4f/6636b1d4f8e643d29eab8c192fc1cea3.jpg', alt='')
-                .slideo
-                    input#slide-1-4.bullit(type='radio', name='slider-1')
-                    label.slide(for='slide-1-4')
-                    img.image(src='http://habrastorage.org/files/e59/424/c04/e59424c046be4dab897d84ab015c87ea.jpg', alt='')
-
-    //.slider
-            //    input#slide-2-1.bullit(type='radio', name='slider-2', checked='')
-            //    label.slide(for='slide-2-1')
-            //    img.image(src='http://habrastorage.org/files/3f2/628/bd5/3f2628bd58c8452db516195cb0c9bfc9.jpg', alt='')
-            //
-            //    input#slide-2-2.bullit(type='radio', name='slider-2')
-            //    label.slide(for='slide-2-2')
-            //    img.image(src='http://habrastorage.org/files/3e1/95d/c7f/3e195dc7f5a64469807f49a14f97ba0e.jpg', alt='')
-            //
-            //    input#slide-2-3.bullit(type='radio', name='slider-2')
-            //    label.slide(for='slide-2-3')
-            //    img.image(src='http://habrastorage.org/files/663/6b1/d4f/6636b1d4f8e643d29eab8c192fc1cea3.jpg', alt='')
-            //
-            //    input#slide-2-4.bullit(type='radio', name='slider-2')
-            //    label.slide(for='slide-2-4')
-            //    img.image(src='http://habrastorage.org/files/e59/424/c04/e59424c046be4dab897d84ab015c87ea.jpg', alt='')
-
-
+            .slider
+                .bullits
+                    .slideo
+                        input#slide-4-1.bullit(type='radio', name='slider-4', checked='')
+                        label.slide(for='slide-4-1')
+                        img.image(src=require("../images/design1.png"), alt='')
+                    .slideo
+                        input#slide-4-2.bullit(type='radio', name='slider-4')
+                        label.slide(for='slide-4-2')
+                        img.image(src=require("../images/design2.png"), alt='')
+                    .slideo
+                        input#slide-4-3.bullit(type='radio', name='slider-4')
+                        label.slide(for='slide-4-3')
+                        img.image(src=require("../images/design3.png"), alt='')
+                    .slideo
+                        input#slide-4-4.bullit(type='radio', name='slider-4')
+                        label.slide(for='slide-4-4')
+                        img.image(src=require("../images/design4.png"), alt='')
+                p.description.text2 Доклад по теме "Структура и дизайн обучающих информационных систем". Выполнена в виде интерактивного приложения, в котором можно сравнить частые ошибки в верстке. Написана на JavaScript, используя Vue.

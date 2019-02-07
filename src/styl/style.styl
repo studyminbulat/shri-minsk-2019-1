@@ -116,6 +116,26 @@ body
       margin 8px auto 0 auto
       max-width 520px
 
+    h3
+      @extend big
+      color $color-white
+      text-align center
+      margin-top 80px
+      margin-bottom 0
+      font-size: 18px;
+      line-height: 24px;
+
+    .link
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+      margin-top 0
+      margin-bottom 20px
+      a
+        @extend .text1
+        color: #71ABFF;
+        text-decoration none
+
 .contacts
   background-color: $color-gray-light
 
@@ -125,7 +145,7 @@ body
     margin 0
 
   .text1
-    margin 40px 0
+    margin 20px 0 40px 0
     text-align center
   .form
     margin-top 20px
@@ -188,12 +208,36 @@ body
       padding 14px
 
   .socials
+    display flex
+    justify-content: center
+    a
+      margin 16px 8px 0 8px
     .vk
       width 48px
       height 48px
       background-size  48px 48px
       border-radius 50%
+      //background-image url("../images/VK.com-logo.svg")
       background-image url("../images/VK.com-logo.svg?fill=%23395A99")
 
       &:hover
         background-image url("../images/VK.com-logo.svg?fill=%23395A99")
+    .fb
+      width 48px
+      height 48px
+      background-size  48px 48px
+      border-radius 50%
+      background-image url("../images/F_icon.svg")
+
+      &:hover
+        background-image url("../images/F_icon.svg")
+    .tg
+      width 48px
+      height 48px
+      background-size  48px 48px
+      border-radius 50%
+      background-image url("../images/Telegram_logo.svg")
+
+      &:hover
+        background-image url("../images/Telegram_logo.svg")
+

@@ -3,19 +3,23 @@
 .slider
   position relative
   width 100%
-  padding-top 370px
-  text-align center
+  padding-top calc(54% +20px)
+  //text-align center
+  display flex
+  flex-direction row-reverse
+  justify-content space-between
 
-  //@media screen and (min-width: 600px)
-  //  max-width 280px
-  //
-  //@media screen and (min-width: 1000px)
-  //  max-width 700px
+
+//@media screen and (min-width: 600px)
+//  max-width 280px
+//
+//@media screen and (min-width: 1000px)
+//  max-width 700px
+.bullits
+  display flex
 
 .bullit
-  position absolute
-  clip rect(0 0 0 0)
-  overflow hidden
+  display none
 
   &:checked
     & + .slide
@@ -45,18 +49,26 @@
   //background-color white
 
   &:after
-      content: ''
-      width 8px
-      height 8px
-      background-color $color-6
-      display block
-      margin 4px
-      border-radius 50%
+    content: ''
+    width 8px
+    height 8px
+    background-color $color-6
+    display block
+    margin 4px
+    border-radius 50%
 
   &:hover
     &:after
       background-color $color-white
+
 //text-indent -9999px
 
 
+.description
+  color $color-white
+  font-size 14px
+  text-align left
+  margin 0
 
+  @media screen and (min-width: 1000px)
+    max-width 520px

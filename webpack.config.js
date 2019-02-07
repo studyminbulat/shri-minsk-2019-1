@@ -34,7 +34,7 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views')
 
 module.exports = {
     entry: [
-        './src/js/index.js',
+        // './src/js/index.js',
         './src/styl/style.styl',
         // './src/pug/index.pug',
     ],
@@ -56,16 +56,16 @@ module.exports = {
                     pretty: true,
                 },
             },
-            {
-                test: /\.js$/,
-                include: path.resolve(__dirname, 'src/js'),
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
-                }
-            },
+            // {
+            //     test: /\.js$/,
+            //     include: path.resolve(__dirname, 'src/js'),
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: {
+            //             presets: ['env']
+            //         }
+            //     }
+            // },
             // {
             //     test: /\.(png|jpg|gif)$/,
             //     use: [

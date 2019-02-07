@@ -1,13 +1,18 @@
-.contacts
+.contacts#connect
     .wrapper
         h2.center Контактная информация
         .socials
-            .vk
+            a(href="https://vk.com/minnemullin.bulat")
+                .vk
+            a(href="https://www.facebook.com/bulat.minnemullin")
+                .fb
+            a(href="https://t.me/minbulat")
+                .tg
             //object(=require("../images/VK.com-logo.svg"))
 
         .text1
             p
-                | Я открыт для новых проектов. Вы можете прислать мне для оценки примерное теххническое задание или просто описание проекта своими словами.
+                | Я открыт для новых проектов. Вы можете прислать мне для оценки примерное техническое задание или просто описание проекта своими словами.
         form.form
             input#name(type="text" placeholder="Как вас зовут?")
             input#mail(type="email" placeholder="Почтовый ящик")
