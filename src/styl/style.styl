@@ -85,13 +85,15 @@ body
 
 .expectations
   background-color: $color-white
-  padding-bottom 15px
+  //padding-bottom 15px
   //height 523px
   .wrapper
     //padding 100px 0 115px 0
 
     p.text1
       max-width 520px
+    h2
+      margin-top 0
 
 
 
@@ -251,34 +253,56 @@ body
     justify-content: center
     a
       margin 16px 8px 0 8px
-      transition: 0.5s;
-    .vk
       width 48px
       height 48px
-      background-size  48px 48px
       border-radius 50%
-      //background-image url("../images/VK.com-logo.svg")
-      background-image url("../images/VK.com-logo.svg?fill=%23395A99")
 
-      &:hover
-        background-image url("../images/VK.com-logo.svg?fill=%23395A99")
-    .fb
-      width 48px
-      height 48px
-      background-size  48px 48px
-      border-radius 50%
-      background-image url("../images/F_icon.svg")
+      img
+        width 48px
+        height 48px
+        border-radius 50%
 
-      &:hover
-        background-image url("../images/F_icon.svg")
-    .tg
-      width 48px
-      height 48px
-      background-size  48px 48px
-      border-radius 50%
-      background-image url("../images/Telegram_logo.svg")
 
-      &:hover
-        background-image url("../images/Telegram_logo.svg")
+      //&:hover
+      //&:after
+      //  content ''
+      //  background-color $color-black
+      //  display block
+      //  width 48px
+      //  height 48px
+      //  border-radius 50%
+      //  opacity 0.2
+      //  margin-top calc(-48px -4px)
+
+
+      &.vk
+        background-color #597da3;
+        &:hover
+          background-color #597da3 - 20%;
+        &:active
+          background-color #597da3;
+          opacity: 0.7;
+      &.fb
+        background-color #395A99;
+        &:hover
+          background-color #395A99 - 20%;
+        &:active
+          background-color #395A99;
+          opacity: 0.7;
+      &.tg
+        background-color #2CA5E0;
+        &:hover
+          background-color #2CA5E0 - 20%;
+        &:active
+          background-color #2CA5E0
+          opacity: 0.7;
+
+      //&.vk
+      //&.fb
+      //  background-color #395A99+0.2;
+      //&.tg
+      //  background-color #2CA5E0+0.2;
+
+
 
 

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" style=""><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+<defs>
+	<linearGradient id="b" x1="0.666700005531311" y1="0.16670000553131104" x2="0.41670000553131104" y2="0.75">
+		<stop stop-color="#37aee2" offset="0"/>
+		<stop stop-color="#1e96c8" offset="1"/>
+	</linearGradient>
+	<linearGradient id="w" x1="0.6596999764442444" y1="0.43689998984336853" x2="0.8511999845504761" y2="0.8023999929428101">
+		<stop stop-color="#eff7fc" offset="0"/>
+		<stop stop-color="#fff" offset="1"/>
+	</linearGradient>
+</defs>
+
+
+
+
+<g class="currentLayer" style=""><title>Layer 1</title><path fill="#c8daea" d="m98 175c-3.8876 0-3.227-1.4679-4.5678-5.1695L82 132.2059 170 80" id="svg_2"/><path fill="#a9c9dd" d="m98 175c3 0 4.3255-1.372 6-3l16-15.558-19.958-12.035" id="svg_3"/><path fill="url(#w)" d="m100.04 144.41 48.36 35.729c5.5185 3.0449 9.5014 1.4684 10.876-5.1235l19.685-92.763c2.0154-8.0802-3.0801-11.745-8.3594-9.3482l-115.59 44.571c-7.8901 3.1647-7.8441 7.5666-1.4382 9.528l29.663 9.2583 68.673-43.325c3.2419-1.9659 6.2173-0.90899 3.7752 1.2584" id="svg_4" class=""/></g></svg>

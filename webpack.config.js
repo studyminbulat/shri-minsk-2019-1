@@ -2,133 +2,66 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs')
-
-// function generateHtmlPlugins(templateDir) {
-//     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-//     return templateFiles.map(item => {
-//         const parts = item.split('.');
-//         const name = parts[0];
-//         const extension = parts[1];
-//         return new HtmlWebpackPlugin({
-//             filename: `${name}.html`,
-//             template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-//             // inject: false,
-//         })
-//     })
-// }
-function generateHtmlPlugins(templateDir) {
-    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-    return templateFiles.map(item => {
-        const parts = item.split('.');
-        const name = parts[0];
-        const extension = parts[1];
-        return new HtmlWebpackPlugin({
-            filename: `${name}.pug`,
-            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-            // inject: false,
-        })
-    })
-}
-
-const htmlPlugins = generateHtmlPlugins('./src/html/views')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WebpackOnBuildPlugin = require('on-build-webpack');
+// const extractCSS = new ExtractTextPlugin('styles.min.css');
 
 module.exports = {
     entry: [
         // './src/js/index.js',
         './src/styl/style.styl',
-        // './src/pug/index.pug',
+        './src/pug/index.pug',
     ],
-    output: {
-        filename: './js/bundle.js'
-    },
+    // output: {
+        // filename: './js/bundle.js'
+        // filename: '[name].css',
+    // },
     devtool: "source-map",
     module: {
         rules: [
-            // {
-            //     test: /\.(pug|jade)$/,
-            //     // include: path.resolve(__dirname, 'src/html/includes'),
-            //     use: ['raw-loader']
-            // },
             {
                 test: /\.(pug|jade)$/,
                 loader: 'pug-loader',
-                options: {
-                    pretty: true,
-                },
+                // options: {
+                //     pretty: true,
+                // },
             },
-            // {
-            //     test: /\.js$/,
-            //     include: path.resolve(__dirname, 'src/js'),
-            //     use: {
-            //         loader: 'babel-loader',
-            //         options: {
-            //             presets: ['env']
-            //         }
-            //     }
-            // },
-            // {
-            //     test: /\.(png|jpg|gif)$/,
-            //     use: [
-            //         {
-            //             loader: 'file-loader',
-            //             options: {},
-            //         },
-            //     ],
-            // },
-            // {
-            //     test: /\.(png|jpg)$/,
-            //     loader: 'url-loader'
-            // },
+
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: 'file-loader'
+                        loader: 'file-loader?limit=1024&name=images/[name].[ext]'
                     }
                 ]
-            },{
-                test: /\.svg(\?.*)?$/, // match img.svg and img.svg?param=value
-                use: [
-                    'url-loader', // or file-loader or svg-url-loader
-                    'svg-transform-loader'
-                ]
             },
-            // {
-            //     test: /\.svg$/,
-            //     loader: 'svg-inline-loader'
-            // },
-            // {
-            //     test: /\.styl$/,
-            //     include: path.resolve(__dirname, 'src/styl'),
-            //     use: ExtractTextPlugin.extract({
-            //         use: [{
-            //             loader: "css-loader",
-            //             options: {
-            //                 sourceMap: true,
-            //                 // minimize: true,
-            //                 url: false
-            //             }
-            //         },
-            //             {
-            //                 loader: "style-loader",
-            //                 options: {
-            //                     sourceMap: true
-            //                 }
-            //             }
-            //         ]
-            //     })
-            // },
-            {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'}
+
+            {
+                test: /\.styl$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'stylus-loader',
+                ],
+            }
         ]
     },
     plugins: [
-        new ExtractTextPlugin({
-            filename: './css/style.bundle.css',
-            allChunks: true,
-        }),
         new HtmlWebpackPlugin({
             template: './src/pug/index.pug',
-        })
-    ]
-    // .concat(htmlPlugins)
+        }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: '[name].css',
+            // filename: '[name].[hash].css',
+            // chunkFilename: '[id].[hash].css',
+            chunkFilename: '[id].css',
+        }),
+        // new WebpackOnBuildPlugin( () => {
+        //     fs.unlinkSync(path.join('dist', 'main.js'));
+        // }),
+    ],
+
 };
