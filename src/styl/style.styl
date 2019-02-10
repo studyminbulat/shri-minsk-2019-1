@@ -26,12 +26,7 @@ body
 
 
 
-.button:hover
-  background-color $color-black
 
-.button:active
-  background-color $color-main
-  opacity 0.7
 
 .header, .expectations, .projects, .contacts
   display flex
@@ -133,8 +128,16 @@ body
       margin-bottom 20px
       a
         @extend .text1
-        color: #71ABFF;
+        color: $color-6
         text-decoration none
+        transition: 0.5s;
+
+        &:hover
+          color  $color-white
+
+        &:active
+          color: $color-6
+          opacity 0.7
 
 .contacts
   background-color: $color-gray-light
@@ -181,6 +184,7 @@ body
       background: #FFFFFF;
       border: 1px solid rgba(31,64,111,0.20);
       border-radius: 4px;
+      transition: 0.5s;
 
       &::placeholder
         opacity: 0.3
@@ -188,6 +192,9 @@ body
         font-size 16px
         color #000000
         line-height 20px
+      &:focus
+        border: 1px solid $color-5;
+        outline:none;
 
     textarea
       resize: none
@@ -195,9 +202,38 @@ body
       font-family 'PT Sans', sans-serif
       font-size 16px
 
-    input[type=file]
-      background-color $color-gray-light
-      color $color-main
+    #file
+      transform 0s
+    #file-input
+      //visibility hidden
+      display none
+
+    .file-label
+        border: 1px solid rgba(31,64,111,0.20);
+        border-radius: 4px;
+        display block
+        background-color $color-gray-light
+
+        color $color-main
+
+        width calc(100% - 18px)
+        //height 36px
+        text-align center
+        padding calc((36px - 20px) / 2)
+        line-height 20px
+        font-size 16px
+        cursor: pointer;
+        font-family 'PT Sans', sans-serif
+
+        &:hover
+          color  $color-black
+
+        &:active
+          color: $color-6
+          opacity 0.7
+
+
+
 
     .button
       background-color $color-main
@@ -207,11 +243,15 @@ body
       height 52px
       padding 14px
 
+      &:hover
+       background-color $color-black
+
   .socials
     display flex
     justify-content: center
     a
       margin 16px 8px 0 8px
+      transition: 0.5s;
     .vk
       width 48px
       height 48px
@@ -240,4 +280,5 @@ body
 
       &:hover
         background-image url("../images/Telegram_logo.svg")
+
 

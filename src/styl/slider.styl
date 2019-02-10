@@ -6,8 +6,17 @@
   padding-top calc(54% +20px)
   //text-align center
   display flex
-  flex-direction row-reverse
   justify-content space-between
+  flex-direction column
+  align-items center
+
+
+  @media screen and (min-width: 1000px)
+    flex-direction row-reverse
+    align-items start
+
+  //@media screen and (min-width: 1000px)
+  //  border-radius: 8px;
 
 
 //@media screen and (min-width: 600px)
@@ -17,6 +26,7 @@
 //  max-width 700px
 .bullits
   display flex
+  margin-bottom 16px
 
 .bullit
   display none
@@ -37,9 +47,15 @@
   top 0
   left 0
   display none
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 7px 22px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
+  box-shadow 0 1px 2px 0 rgba(0,0,0,0.08), 0 4px 12px 0 rgba(0,0,0,0.12);
+  border-radius: 4px;
   width 100%
+
+  @media screen and (min-width: 600px)
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08), 0 7px 22px 0 rgba(0,0,0,0.12);
+
+  @media screen and (min-width: 1000px)
+    border-radius: 8px;
 
 .slide
   overflow hidden
@@ -56,6 +72,7 @@
     display block
     margin 4px
     border-radius 50%
+    transition: 0.5s;
 
   &:hover
     &:after
@@ -69,6 +86,7 @@
   font-size 14px
   text-align left
   margin 0
+  line-height 20px
 
   @media screen and (min-width: 1000px)
     max-width 520px
